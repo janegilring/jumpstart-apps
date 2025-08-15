@@ -1,33 +1,33 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: hello-gloverock
-  namespace: hello-gloverock
+  name: hello-glove-rock
+  namespace: hello-glove-rock
 spec:
   type: ClusterIP
   ports:
   - port: 80
     targetPort: 8080
   selector:
-    app: hello-gloverock
+    app: hello-glove-rock
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: hello-gloverock
-  namespace: hello-gloverock
+  name: hello-glove-rock
+  namespace: hello-glove-rock
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: hello-gloverock
+      app: hello-glove-rock
   template:
     metadata:
       labels:
-        app: hello-gloverock
+        app: hello-glove-rock
     spec:
       containers:
-      - name: hello-gloverock
+      - name: hello-glove-rock
         image: mcr.microsoft.com/jumpstart/arcbox/hello_arc:1.0.0
         ports:
         - containerPort: 8080
